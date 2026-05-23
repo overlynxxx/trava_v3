@@ -233,7 +233,7 @@ const REVIEWS = [
 const FAQ_DATA = [
   { q: "Можно ли с домашними животными?", a: "Да, мы pet-friendly. Просим заранее предупредить менеджера и не оставлять питомца одного в коттедже." },
   { q: "Как добраться без машины?", a: "Автобус №898 от м. Парнас идёт прямо в район базы (1,5 часа в пути). Также можно заказать платный трансфер от любой точки СПб." },
-  { q: "Что включено в стоимость коттеджа?", a: "Постельное бельё, полотенца, фен, чай/кофе в день заезда. Своя кухня с индукцией, посудой и холодильником. Smart TV со спутниковым, Wi-Fi, сушильный шкаф. Парковка бесплатная." },,
+  { q: "Что включено в стоимость коттеджа?", a: "Постельное бельё, полотенца, фен, чай/кофе в день заезда. Своя кухня с индукцией, посудой и холодильником. Smart TV со спутниковым, Wi-Fi, сушильный шкаф. Парковка бесплатная." },
   { q: "Какая ситуация с курением и тишиной?", a: "Курение — только на террасе. Звукоизоляция между коттеджами слабая, поэтому просим соблюдать тишину после 23:00." },
   { q: "Как оплачивается бронь?", a: "Предоплата 30% подтверждает бронь. Остальное — при заезде наличными или картой. Отмена за 7 дней — без штрафа." },
   { q: "Можно ли с детьми?", a: "Конечно. Детская площадка, мангальные зоны, мини-зоопарк, бассейн летом. Дети до 14 лет — без доплаты на дополнительном месте." },
@@ -456,47 +456,6 @@ function HeroIllustration() {
   );
 }
 
-function HeroIllustration() {
-  return (
-    <div className="hero-illust">
-      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-        {/* Sky/paper backdrop with subtle stripes */}
-        <defs>
-          <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="6" stroke="oklch(0.42 0.06 145)" strokeOpacity="0.18" strokeWidth="1"/>
-          </pattern>
-          <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="oklch(0.55 0.07 145)"/>
-            <stop offset="100%" stopColor="oklch(0.4 0.06 145)"/>
-          </linearGradient>
-        </defs>
-        {/* Soft sun */}
-        <circle cx="1100" cy="220" r="140" fill="oklch(0.92 0.05 80)" opacity="0.6"/>
-        {/* Distant hills */}
-        <path d="M0 600 Q 360 420 720 540 T 1440 500 L 1440 900 L 0 900 Z" fill="url(#hill)" opacity="0.4"/>
-        <path d="M0 680 Q 300 520 720 620 T 1440 580 L 1440 900 L 0 900 Z" fill="url(#hill)" opacity="0.7"/>
-        {/* Ground */}
-        <rect x="0" y="720" width="1440" height="180" fill="oklch(0.35 0.05 145)"/>
-        <rect x="0" y="720" width="1440" height="180" fill="url(#hatch)"/>
-        {/* Trees — simple triangles */}
-        {[120, 220, 340, 500, 980, 1100, 1240, 1340].map((x, i) => (
-          <g key={i} transform={`translate(${x} ${640 + (i % 3) * 18})`}>
-            <polygon points="0,0 -28,80 28,80" fill="oklch(0.28 0.05 145)" />
-            <polygon points="0,30 -22,90 22,90" fill="oklch(0.32 0.06 145)" />
-            <rect x="-3" y="80" width="6" height="14" fill="oklch(0.25 0.03 65)"/>
-          </g>
-        ))}
-        {/* Cottage silhouette */}
-        <g transform="translate(680 600)">
-          <polygon points="-60,-40 0,-90 60,-40" fill="oklch(0.32 0.04 65)"/>
-          <rect x="-60" y="-40" width="120" height="70" fill="oklch(0.42 0.04 65)"/>
-          <rect x="-15" y="-10" width="30" height="40" fill="oklch(0.85 0.08 80)"/>
-        </g>
-      </svg>
-    </div>
-  );
-}
-
 function HeroScroll() {
   return (
     <div className="hero-scroll">
@@ -587,15 +546,6 @@ function BookingBand({ BookingWidget }) {
   return (
     <div className="container booking-wrap" id="booking">
       <BookingWidget />
-    </div>
-  );
-}
-
-function HeroScroll() {
-  return (
-    <div className="hero-scroll">
-      <span>Прокрутить</span>
-      <span className="line"></span>
     </div>
   );
 }
