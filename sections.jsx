@@ -257,8 +257,8 @@ function Header({ lang, setLang, season, setSeason, T }) {
     <>
       <nav className={`nav ${scrolled || open ? "is-scrolled" : ""} ${open ? "is-open" : ""}`} style={{ color: (scrolled || open) ? "var(--bark-900)" : "var(--paper)" }}>
         <a href="#top" className="nav-logo" aria-label="Trava — на главную" onClick={closeMenu}>
-          <img src="media/logo-trava.png" alt="Trava" className="nav-logo-img logo-light" />
-          <img src="media/logo-trava-dark.png" alt="Trava" className="nav-logo-img logo-dark" />
+          <img src="logo.png" alt="Trava" className="nav-logo-img logo-light" />
+          <img src="logo.png" alt="Trava" className="nav-logo-img logo-dark" />
         </a>
         <div className="nav-links">
           <a href="#cottages">{T.nav.cottages}</a>
@@ -718,7 +718,7 @@ function WinterSection({ T }) {
       </div>
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div className="reveal"  >
-          <div className="s-head">
+          <div className="s-head reveal">
             <div>
               <span className="eyebrow" style={{ color: "oklch(0.82 0.04 130)" }}>{T.section_winter_eyebrow}</span>
               <h2 className="h-display h2" style={{ marginTop: 12, color: "var(--paper)" }}>{T.section_winter_title}</h2>
@@ -1053,7 +1053,7 @@ function FAQ({ T }) {
             <span className="eyebrow" style={{ justifyContent: "center" }}>{T.section_faq_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_faq_title}</h2>
           </div>
-          <div className="faq">
+          <div className="faq reveal">
             {FAQ_DATA.map((item, i) => (
               <div className={`faq-item ${open === i ? "open" : ""}`} key={i} onClick={() => setOpen(open === i ? -1 : i)}>
                 <div className="faq-q">
@@ -1077,14 +1077,14 @@ function Contacts({ T }) {
     <section className="section" id="contacts" style={{ background: "var(--cream)" }}>
       <div className="container">
         <div className="reveal"  >
-          <div className="s-head">
+          <div className="s-head reveal">
             <div>
               <span className="eyebrow">{T.section_contacts_eyebrow}</span>
               <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_contacts_title}</h2>
             </div>
             <p className="lede">Звоните с 10:00 до 21:00 — менеджеры отвечают сразу. Или приезжайте: автобус №898 от м. Парнас, или 1,5 часа на машине.</p>
           </div>
-          <div className="contact-grid">
+          <div className="contact-grid reveal">
             <div className="contact-info">
               <h3>Загородный клуб «ТРАВА»</h3>
               <div className="row">
@@ -1161,7 +1161,7 @@ function Footer({ T }) {
       <div className="footer-grid">
         <div>
           <div className="footer-brand">
-            <img src="media/logo-trava.png" alt="Trava" className="footer-logo-img" />
+            <img src="logo.png" alt="Trava" className="footer-logo-img" />
             <span className="sub">Загородный клуб</span>
           </div>
         </div>

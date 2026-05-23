@@ -118,6 +118,26 @@ function App() {
     applyTweaks(t);
   }, [t.palette, t.typography]);
 
+  useEffectA(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const update = () => {
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+        observer.observe(el);
+      });
+    };
+
+    update();
+    const timer = setInterval(update, 1000); // For dynamic content
+    return () => { observer.disconnect(); clearInterval(timer); };
+  }, []);
+
   return (
     <>
       <Header lang={lang} setLang={setLang} season={season} setSeason={setSeason} T={T} />
