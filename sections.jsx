@@ -466,7 +466,7 @@ function HeroScroll() {
 }
 
 function Hero({ T, heroStyle, season, setSeason, BookingWidget }) {
-  const revealRef = useReveal();
+  
   const heroPhoto = season === "winter" ? "media3/winter-1.jpeg" : "media3/summer-1.png";
   return (
     <section className="hero" id="top" data-hero-style={heroStyle} data-season={season}>
@@ -518,7 +518,7 @@ function Hero({ T, heroStyle, season, setSeason, BookingWidget }) {
 
 // ============== SOCIAL PROOF / BENEFITS ==============
 function SocialProof({ T }) {
-  const revealRef = useReveal();
+  
   const benefits = [
     { title: "Pet Friendly", desc: "Рады вам и вашим питомцам", icon: "🐶" },
     { title: "Smart TV & Wi-Fi", desc: "Всегда на связи с комфортом", icon: "📡" },
@@ -526,7 +526,7 @@ function SocialProof({ T }) {
     { title: "Мини-зоопарк", desc: "Радость для детей и взрослых", icon: "🦌" },
   ];
   return (
-    <div className="container" style={{ marginTop: "40px", marginBottom: "40px", position: "relative", zIndex: 10 }}>
+    <div className="container" style={{ marginTop: "120px", marginBottom: "40px", position: "relative", zIndex: 10 }}>
       <div className="benefits-grid reveal-stagger" ref={revealRef}>
         {benefits.map((b, i) => (
           <div className="benefit-card" key={i}>
@@ -551,7 +551,7 @@ function BookingBand({ BookingWidget }) {
 }
 
 // ============== OVERVIEW (4 cards) ==============
-function OverviewCards({ T }) {
+function OverviewCards({ T }) { const revealRef = useReveal();
   
   const cards = [
     { id: "cottages", title: "Коттеджи", desc: "18 номеров от 4 до 10 мест", icon: "house", href: "#cottages" },
@@ -570,7 +570,7 @@ function OverviewCards({ T }) {
   return (
     <section className="section section-overview">
       <div className="container">
-        <div className="overview-grid reveal-stagger" >
+        <div className="overview-grid reveal-stagger" ref={revealRef} >
           {cards.map((c) => (
             <a href={c.href} className="ov-card" key={c.id}>
               <div className="ov-card-ico"><Icon name={c.icon} /></div>
@@ -588,7 +588,7 @@ function OverviewCards({ T }) {
 }
 
 // ============== FACTS BAND ==============
-function FactsBand() {
+function FactsBand() { const revealRef = useReveal();
   
   const facts = [
     { num: "1,5 ч", label: "от Петербурга" },
@@ -599,7 +599,7 @@ function FactsBand() {
   return (
     <div className="facts-container">
       <div className="container">
-        <div className="facts reveal-stagger" >
+        <div className="facts reveal-stagger" ref={revealRef} >
           {facts.map((f, i) => (
             <div className="fact" key={i}>
               <div className="num">{f.num}</div>
@@ -613,14 +613,14 @@ function FactsBand() {
 }
 
 // ============== COTTAGES ==============
-function Cottages({ T }) {
+function Cottages({ T }) { const headRef = useReveal(); const listRef = useReveal(); const rulesRef = useReveal();
   
   
   
   return (
     <section className="section" id="cottages">
       <div className="container">
-        <div className="s-head reveal" >
+        <div className="s-head reveal" ref={headRef} >
           <div>
             <span className="eyebrow">{T.section_cottages_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_cottages_title}</h2>
@@ -628,7 +628,7 @@ function Cottages({ T }) {
           <p className="lede">{T.section_cottages_lede}</p>
         </div>
 
-        <div className="cottages reveal-stagger" >
+        <div className="cottages reveal-stagger" ref={listRef} >
           {COTTAGES_DATA.map((c) => (
             <article className="cottage" key={c.id}>
               <div className="cottage-photo">
@@ -661,7 +661,7 @@ function Cottages({ T }) {
           ))}
         </div>
 
-        <div className="cottage-rules reveal-stagger" >
+        <div className="cottage-rules reveal-stagger" ref={rulesRef} >
           <div className="cottage-rule"><span className="r-ico">🐶</span><div><b>Животные</b><span>разрешены</span></div></div>
           <div className="cottage-rule"><span className="r-ico">🚬</span><div><b>Курение</b><span>только на террасе</span></div></div>
           <div className="cottage-rule"><span className="r-ico">🧹</span><div><b>Уборка</b><span>1 раз в 3 дня</span></div></div>
@@ -673,13 +673,13 @@ function Cottages({ T }) {
 }
 
 // ============== BANYA ==============
-function Banya({ T, season = "summer" }) {
+function Banya({ T, season = "summer" }) { const revealRef = useReveal();
   
   const photo = season === "winter" ? "media3/banya-2.png" : "media3/banya-4.png";
   return (
     <section className="section" id="banya" style={{ background: "var(--cream)" }}>
       <div className="container">
-        <div className="split reveal" >
+        <div className="split reveal" ref={revealRef} >
           <div className="split-photo">
             <img src={photo} alt="Парная" className="photo-img" key={photo} />
           </div>
@@ -709,7 +709,7 @@ function Banya({ T, season = "summer" }) {
 }
 
 // ============== WINTER SECTION ==============
-function WinterSection({ T }) {
+function WinterSection({ T }) { const revealRef = useReveal();
   
   return (
     <section className="section winter-section" id="winter">
@@ -717,7 +717,7 @@ function WinterSection({ T }) {
         <img src="media3/winter-3.jpg" alt="" />
       </div>
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <div className="reveal" >
+        <div className="reveal" ref={revealRef} >
           <div className="s-head">
             <div>
               <span className="eyebrow" style={{ color: "oklch(0.82 0.04 130)" }}>{T.section_winter_eyebrow}</span>
@@ -827,7 +827,7 @@ function EventKPForm() {
 }
 
 // ============== RESTAURANT ==============
-function Restaurant({ T }) {
+function Restaurant({ T }) { const revealRef = useReveal();
   
   const photos = [
     "media3/rest-1.png",
@@ -838,7 +838,7 @@ function Restaurant({ T }) {
   return (
     <section className="section" id="restaurant" style={{ background: "var(--paper)" }}>
       <div className="container">
-        <div className="split reverse reveal" >
+        <div className="split reverse reveal" ref={revealRef} >
           <div className="split-photo">
             <CottageCarousel photos={photos} alt="Ресторан и бар TRAVA" />
           </div>
@@ -868,7 +868,7 @@ function Restaurant({ T }) {
 }
 
 // ============== ACTIVITIES ==============
-function Activities({ T, season = "summer" }) {
+function Activities({ T, season = "summer" }) { const headRef = useReveal(); const panelRef = useReveal();
   
   
   const [tab, setTab] = useStateS(season);
@@ -877,7 +877,7 @@ function Activities({ T, season = "summer" }) {
   return (
     <section className="section" id="activities" style={{ background: "var(--cream)" }}>
       <div className="container">
-        <div className="s-head reveal" >
+        <div className="s-head reveal" ref={headRef} >
           <div>
             <span className="eyebrow">{T.section_activities_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_activities_title}</h2>
@@ -893,7 +893,7 @@ function Activities({ T, season = "summer" }) {
           ))}
         </div>
 
-        <div className="act-panel reveal" >
+        <div className="act-panel reveal" ref={panelRef} >
           <div className="act-photo">
             <img src={data.photo} alt={data.label} className="photo-img" />
           </div>
@@ -914,12 +914,12 @@ function Activities({ T, season = "summer" }) {
 }
 
 // ============== EVENTS ==============
-function Events({ T }) {
+function Events({ T }) { const revealRef = useReveal();
   
   return (
     <section className="section" id="events">
       <div className="container">
-        <div className="events reveal" >
+        <div className="events reveal" ref={revealRef} >
           <div className="events-text">
             <span className="eyebrow" style={{ color: "oklch(0.78 0.04 130)" }}>{T.section_events_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12, color: "var(--paper)" }}>{T.section_events_title}</h2>
@@ -952,7 +952,7 @@ function Events({ T }) {
 }
 
 // ============== GALLERY ==============
-function Gallery({ T, season = "summer" }) {
+function Gallery({ T, season = "summer" }) { const headRef = useReveal(); const gridRef = useReveal();
   
   const gridRef = useReveal();
   const summerSlots = [
@@ -980,7 +980,7 @@ function Gallery({ T, season = "summer" }) {
   return (
     <section className="section" id="gallery">
       <div className="container">
-        <div className="s-head reveal" >
+        <div className="s-head reveal" ref={headRef} >
           <div>
             <span className="eyebrow">{T.section_gallery_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_gallery_title}</h2>
@@ -1000,13 +1000,13 @@ function Gallery({ T, season = "summer" }) {
 }
 
 // ============== REVIEWS ==============
-function Reviews({ T }) {
+function Reviews({ T }) { const headRef = useReveal(); const listRef = useReveal();
   
   
   return (
     <section className="section" id="reviews" style={{ background: "var(--cream)" }}>
       <div className="container">
-        <div className="s-head reveal" >
+        <div className="s-head reveal" ref={headRef} >
           <div>
             <span className="eyebrow">{T.section_reviews_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_reviews_title}</h2>
@@ -1021,7 +1021,7 @@ function Reviews({ T }) {
             </div>
           </div>
         </div>
-        <div className="reviews reveal-stagger" >
+        <div className="reviews reveal-stagger" ref={listRef} >
           {REVIEWS.map((r, i) => (
             <article className="review" key={i}>
               <div className="stars">{r.stars}</div>
@@ -1042,13 +1042,13 @@ function Reviews({ T }) {
 }
 
 // ============== FAQ ==============
-function FAQ({ T }) {
+function FAQ({ T }) { const revealRef = useReveal();
   
   const [open, setOpen] = useStateS(0);
   return (
     <section className="section" id="faq">
       <div className="container">
-        <div className="reveal" >
+        <div className="reveal" ref={revealRef} >
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <span className="eyebrow" style={{ justifyContent: "center" }}>{T.section_faq_eyebrow}</span>
             <h2 className="h-display h2" style={{ marginTop: 12 }}>{T.section_faq_title}</h2>
@@ -1071,12 +1071,12 @@ function FAQ({ T }) {
 }
 
 // ============== CONTACTS ==============
-function Contacts({ T }) {
+function Contacts({ T }) { const revealRef = useReveal();
   
   return (
     <section className="section" id="contacts" style={{ background: "var(--cream)" }}>
       <div className="container">
-        <div className="reveal" >
+        <div className="reveal" ref={revealRef} >
           <div className="s-head">
             <div>
               <span className="eyebrow">{T.section_contacts_eyebrow}</span>
