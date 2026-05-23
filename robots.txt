@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /uploads/
+
+# Запрет служебных файлов
+Disallow: /*.jsx$
+Disallow: /tweaks-panel.jsx
+Disallow: /image-slot.js
+
+# Sitemap
+Sitemap: https://trava.tv/sitemap.xml
+
+# Host (для Яндекс)
+Host: https://trava.tv

@@ -1,0 +1,12 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-label="TRAVA">
+  
+  <path d="M10 30 L32 8 C 34 6 36 6 38 8 L54 22 C 55.5 23.4 56 25.3 56 27 L56 54 C 56 55.1 55.1 56 54 56 L10 56 C 8.9 56 8 55.1 8 54 L8 32 C 8 31.2 8.4 30.5 9 30 Z" fill="currentColor"></path>
+  
+  <path d="M32 8 C 30 4 28 2 26 4 C 24.6 5.4 25.4 8.2 27.4 9.6 C 28.8 10.5 30.5 10.4 32 9 Z" fill="currentColor"></path>
+  
+  <rect x="26" y="32" width="12" height="14" rx="1.5" fill="#B79655"></rect>
+  
+  <line x1="32" y1="32" x2="32" y2="46" stroke="#1F3E2E" stroke-width="1.4"></line>
+  <line x1="26" y1="39" x2="38" y2="39" stroke="#1F3E2E" stroke-width="1.4"></line>
+</svg>
