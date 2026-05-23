@@ -122,7 +122,7 @@ function App() {
     <>
       <Header lang={lang} setLang={setLang} season={season} setSeason={setSeason} T={T} />
       <Hero T={T} heroStyle={t.heroStyle} season={season} setSeason={setSeason} BookingWidget={BookingWidget} />
-      <SocialProof T={T} />
+      
       <BookingBand BookingWidget={BookingWidget} />
       <FactsBand season={season} />
       <OverviewCards T={T} />
