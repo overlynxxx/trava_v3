@@ -466,7 +466,7 @@ function HeroScroll() {
 }
 
 function Hero({ T, heroStyle, season, setSeason, BookingWidget }) {
-  
+  const revealRef = useReveal();
   const heroPhoto = season === "winter" ? "media3/winter-1.jpeg" : "media3/summer-1.png";
   return (
     <section className="hero" id="top" data-hero-style={heroStyle} data-season={season}>
@@ -478,7 +478,7 @@ function Hero({ T, heroStyle, season, setSeason, BookingWidget }) {
       )}
 
       <div className="container" style={{ width: "100%" }}>
-        <div className="hero-grid reveal" >
+        <div className="hero-grid reveal" ref={revealRef}>
           <div className="hero-eyebrow-row">
             <span className="dot"></span>
             {T.hero_eyebrow}
@@ -518,7 +518,7 @@ function Hero({ T, heroStyle, season, setSeason, BookingWidget }) {
 
 // ============== SOCIAL PROOF / BENEFITS ==============
 function SocialProof({ T }) {
-  
+  const revealRef = useReveal();
   const benefits = [
     { title: "Pet Friendly", desc: "Рады вам и вашим питомцам", icon: "🐶" },
     { title: "Smart TV & Wi-Fi", desc: "Всегда на связи с комфортом", icon: "📡" },
@@ -526,8 +526,8 @@ function SocialProof({ T }) {
     { title: "Мини-зоопарк", desc: "Радость для детей и взрослых", icon: "🦌" },
   ];
   return (
-    <div className="container" style={{ marginTop: "-60px", position: "relative", zIndex: 10 }}>
-      <div className="benefits-grid reveal-stagger" >
+    <div className="container" style={{ marginTop: "40px", marginBottom: "40px", position: "relative", zIndex: 10 }}>
+      <div className="benefits-grid reveal-stagger" ref={revealRef}>
         {benefits.map((b, i) => (
           <div className="benefit-card" key={i}>
             <div className="benefit-icon">{b.icon}</div>
